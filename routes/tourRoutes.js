@@ -1,8 +1,7 @@
 const express = require('express');
 const tourController = require('./../controller/tourController');
 const router = express.Router();
-//  TOURS
-
+router.param('id', tourController.checkID);
 router
   .route('/')
   .get(tourController.getAllTours)
